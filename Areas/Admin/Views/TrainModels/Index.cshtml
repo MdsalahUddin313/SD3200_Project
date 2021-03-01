@@ -1,0 +1,108 @@
+﻿@model IEnumerable<SDProject03.Models.TrainModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TrainName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TrainCompanyName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TrainTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TrainDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TrainMap)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TrainRating)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TrainSeatType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TrainSeatPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DepartureTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TrainDepartureLocation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TrainArrivalLocation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ArrivalTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImageName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrainName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrainCompanyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrainTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrainDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrainMap)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrainRating)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrainSeatType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrainSeatPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepartureTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrainDepartureLocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrainArrivalLocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ArrivalTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImageName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.TrainId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.TrainId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.TrainId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

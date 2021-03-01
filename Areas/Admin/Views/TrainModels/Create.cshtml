@@ -1,0 +1,94 @@
+﻿@model SDProject03.Models.TrainModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>TrainModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TrainName" class="control-label"></label>
+                <input asp-for="TrainName" class="form-control" />
+                <span asp-validation-for="TrainName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TrainCompanyName" class="control-label"></label>
+                <input asp-for="TrainCompanyName" class="form-control" />
+                <span asp-validation-for="TrainCompanyName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TrainTitle" class="control-label"></label>
+                <input asp-for="TrainTitle" class="form-control" />
+                <span asp-validation-for="TrainTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TrainDescription" class="control-label"></label>
+                <input asp-for="TrainDescription" class="form-control" />
+                <span asp-validation-for="TrainDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TrainMap" class="control-label"></label>
+                <input asp-for="TrainMap" class="form-control" />
+                <span asp-validation-for="TrainMap" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TrainRating" class="control-label"></label>
+                <input asp-for="TrainRating" class="form-control" />
+                <span asp-validation-for="TrainRating" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TrainSeatType" class="control-label"></label>
+                <input asp-for="TrainSeatType" class="form-control" />
+                <span asp-validation-for="TrainSeatType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TrainSeatPrice" class="control-label"></label>
+                <input asp-for="TrainSeatPrice" class="form-control" />
+                <span asp-validation-for="TrainSeatPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DepartureTime" class="control-label"></label>
+                <input asp-for="DepartureTime" class="form-control" />
+                <span asp-validation-for="DepartureTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TrainDepartureLocation" class="control-label"></label>
+                <input asp-for="TrainDepartureLocation" class="form-control" />
+                <span asp-validation-for="TrainDepartureLocation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TrainArrivalLocation" class="control-label"></label>
+                <input asp-for="TrainArrivalLocation" class="form-control" />
+                <span asp-validation-for="TrainArrivalLocation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ArrivalTime" class="control-label"></label>
+                <input asp-for="ArrivalTime" class="form-control" />
+                <span asp-validation-for="ArrivalTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageName" class="control-label"></label>
+                <input asp-for="ImageName" class="form-control" />
+                <span asp-validation-for="ImageName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

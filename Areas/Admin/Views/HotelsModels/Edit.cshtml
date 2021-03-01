@@ -1,0 +1,85 @@
+﻿@model SDProject03.Models.HotelsModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>HotelsModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="HotelsId" />
+            <div class="form-group">
+                <label asp-for="HotelsName" class="control-label"></label>
+                <input asp-for="HotelsName" class="form-control" />
+                <span asp-validation-for="HotelsName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HotelsCompanyName" class="control-label"></label>
+                <input asp-for="HotelsCompanyName" class="form-control" />
+                <span asp-validation-for="HotelsCompanyName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HotelsTitle" class="control-label"></label>
+                <input asp-for="HotelsTitle" class="form-control" />
+                <span asp-validation-for="HotelsTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HotelsDescription" class="control-label"></label>
+                <input asp-for="HotelsDescription" class="form-control" />
+                <span asp-validation-for="HotelsDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HotelsMap" class="control-label"></label>
+                <input asp-for="HotelsMap" class="form-control" />
+                <span asp-validation-for="HotelsMap" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HotelsRating" class="control-label"></label>
+                <input asp-for="HotelsRating" class="form-control" />
+                <span asp-validation-for="HotelsRating" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HotelsRoomtype" class="control-label"></label>
+                <input asp-for="HotelsRoomtype" class="form-control" />
+                <span asp-validation-for="HotelsRoomtype" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HotelsSeatPrice" class="control-label"></label>
+                <input asp-for="HotelsSeatPrice" class="form-control" />
+                <span asp-validation-for="HotelsSeatPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CheckIn" class="control-label"></label>
+                <input asp-for="CheckIn" class="form-control" />
+                <span asp-validation-for="CheckIn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CheckoutTime" class="control-label"></label>
+                <input asp-for="CheckoutTime" class="form-control" />
+                <span asp-validation-for="CheckoutTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageName" class="control-label"></label>
+                <input asp-for="ImageName" class="form-control" />
+                <span asp-validation-for="ImageName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

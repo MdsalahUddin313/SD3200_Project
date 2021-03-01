@@ -1,0 +1,108 @@
+﻿@model IEnumerable<SDProject03.Models.BusModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BusName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BusCompanyName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BusTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BusDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BusMap)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BusRating)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BusSeatType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BusSeatPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DepartureTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BusDepartureLocation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BusArrivalLocation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ArrivalTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImageName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BusName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BusCompanyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BusTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BusDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BusMap)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BusRating)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BusSeatType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BusSeatPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepartureTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BusDepartureLocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BusArrivalLocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ArrivalTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImageName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.BusId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.BusId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.BusId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

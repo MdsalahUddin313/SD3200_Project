@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace SDProject03.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    //[Authorize]
+    [Authorize]
     public class BlogController : Controller
     {
 
