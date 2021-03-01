@@ -1,0 +1,210 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@{
+    ViewData["Title"] = "Blog Page";
+}
+
+
+
+
+<!--Blog page Design-->
+<!--========================
+
+    Navbar Part
+
+    =========================-->
+<!-- A grey horizontal navbar that becomes vertical on small screens -->
+<nav class="navbar navbar-expand-sm bg-light sticky-top">
+
+    <!-- Links -->
+    <ul class="navbar-nav container">
+        <li class="nav-item">
+            <a class="nav-link" href="#">History</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Nature</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">City</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Sea Beaches</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Events</a>
+        </li>
+    </ul>
+
+</nav>
+
+
+
+
+
+<!--Blog page Design-->
+<!--========================
+
+    Carosoul Part
+
+    =========================-->
+<section class="container m-auto p-0">
+    <div id="demo" class="carousel slide" data-ride="carousel">
+
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://i.pinimg.com/originals/13/5f/fb/135ffb1204f7abecf0fbe3e345f29d09.jpg" alt="Los Angeles">
+            </div>
+            <div class="carousel-item">
+                <img src="https://wallpapershome.com/images/wallpapers/autumn-forest-1280x720-4k-hd-wallpaper-leaves-trees-lake-rocks-beach-578.jpg" alt="Chicago">
+            </div>
+            <div class="carousel-item">
+                <img src="https://wallpaperaccess.com/full/1078159.jpg" alt="New York">
+            </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+
+    </div>
+
+</section>
+
+<!--========================
+
+    Top rated Blogs Part
+
+    =========================-->
+<div class="text-center mt-5 my-4">
+    <h1> Top Blogs </h1>
+    <p>____________________________________</p>
+</div>
+<section class="container m-auto ">
+
+    <div class="row mt-4">
+        <div class="col-xl-6">
+            <p class="text-sm-left">Recent News</p>
+
+            <card class="card-body">
+                <div class="col-md-6 float-left">
+                    <img src="https://wallpapershome.com/images/wallpapers/autumn-forest-1280x720-4k-hd-wallpaper-leaves-trees-lake-rocks-beach-578.jpg" class="w-100 h-100 " alt="Chicago">
+                </div>
+                <div class="col-md-4 float-left">
+                    <h1 style="font-size:16px;"><strong>Header Title</strong></h1>
+                    <p>Summary Description</p>
+                    <p class="text-muted">date and time<br />ratings:4.5 likes</p>
+                </div>
+
+            </card>
+            <card class="card-body">
+                <div class="col-md-6 float-left">
+                    <img src="https://wallpapershome.com/images/wallpapers/autumn-forest-1280x720-4k-hd-wallpaper-leaves-trees-lake-rocks-beach-578.jpg" class="w-100 h-100 " alt="Chicago">
+                </div>
+                <div class="col-md-4 float-left">
+                    <h1 style="font-size:16px;"><strong>Header Title</strong></h1>
+                    <p>Summary Description</p>
+                    <p class="text-muted">date and time<br />ratings:4.5 likes</p>
+                </div>
+
+            </card>
+
+            <card class="card-body">
+                <div class="col-md-6 float-left">
+                    <img src="https://wallpapershome.com/images/wallpapers/autumn-forest-1280x720-4k-hd-wallpaper-leaves-trees-lake-rocks-beach-578.jpg" class="w-100 h-100 " alt="Chicago">
+                </div>
+                <div class="col-md-4 float-left">
+                    <h1 style="font-size:16px;"><strong>Header Title</strong></h1>
+                    <p>Summary Description</p>
+                    <p class="text-muted">date and time<br />ratings:4.5 likes</p>
+                </div>
+
+            </card>
+
+            <card class="card-body">
+                <div class="col-md-6 float-left">
+                    <img src="https://wallpapershome.com/images/wallpapers/autumn-forest-1280x720-4k-hd-wallpaper-leaves-trees-lake-rocks-beach-578.jpg" class="w-100 h-100 " alt="Chicago">
+                </div>
+                <div class="col-md-4 float-left">
+                    <h1 style="font-size:16px;"><strong>Header Title</strong></h1>
+                    <p>Summary Description</p>
+                    <p class="text-muted">date and time<br />ratings:4.5 likes</p>
+                </div>
+
+            </card>
+
+            <card class="card-body">
+                <div class="col-md-6 float-left">
+                    <img src="https://wallpapershome.com/images/wallpapers/autumn-forest-1280x720-4k-hd-wallpaper-leaves-trees-lake-rocks-beach-578.jpg" class="w-100 h-100 " alt="Chicago">
+                </div>
+                <div class="col-md-4 float-left">
+                    <h1 style="font-size:16px;"><strong>Header Title</strong></h1>
+                    <p>Summary Description</p>
+                    <p class="text-muted">date and time<br />ratings:4.5 likes</p>
+                </div>
+
+            </card>
+
+        </div>
+        <div class="col-md-6 w-50 h-100">
+            <img style="width:100%" src="https://picsum.photos/seed/picsum/200/300" alt="Chicago">
+        </div>
+
+    </div>
+</section>
+
+
+
+<!--========================
+
+    Top rated Bloggers Part
+
+    =========================-->
+<div class="text-center mt-5 my-4">
+    <h1> Top Bloggers </h1>
+    <p>____________________________________</p>
+</div>
+
+<section class="container mt-lg-5">
+    <div class="card-group">
+        <div class="card pr-1">
+            <img class="card-img-top" src="https://randomuser.me/api/portraits/men/6.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Abenia</h5>
+
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="https://randomuser.me/api/portraits/men/92.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">John</h5>
+
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+        <div class="card pl-1">
+            <img class="card-img-top" src="https://randomuser.me/api/portraits/men/58.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Robert Doe</h5>
+                <small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+    </div>
+
+</section>

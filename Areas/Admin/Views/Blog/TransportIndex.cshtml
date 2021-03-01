@@ -1,0 +1,73 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+@{
+    ViewBag.Title = ("Hotels");
+}
+
+
+<div class="container">
+
+
+
+    <h1 class="text-center my-3 m-4">Transport Lists</h1>
+    <div class="row">
+        <div class="col-md-3" style="border-right:2px solid gray;">
+
+            <h1 class=" text-center m-auto mt-0" style="font-size:16px;">Search filters</h1><br />
+            <label for="fdate">Departure Time</label>
+            <input class="form-control" type="date" id="fdate" name="fdate" /><br />
+            <label for="tdate">Arrival Time</label>
+            <input class="form-control" type="date" id="tdate" name="tdate" /><br />
+
+            <h1 class=" text-center m-auto" style="font-size:16px;">Search by Locations</h1><br />
+            <label for="location">Choose your Transport Type.</label>
+            <select class="form-control" id="location"><option>Bus</option><option>Train</option><option>Plane</option><option>Launch</option></select>
+
+            <h1 class=" text-center m-auto" style="font-size:16px;">Search filters</h1><br />
+            <label for="fplace">Departure From</label>
+            <input class="form-control" type="text" id="fplace" name="fplace" /><br />
+            <label for="tdate">Arrival Time</label>
+            <input class="form-control" type="text" id="tplace" name="tplace" /><br />
+        </div>
+
+
+
+        <div class="col-md-9 jumbotron-fluid">
+            <div class="card-deck">
+                <div class="card">
+                    <img class="card-img-top" style="width:100%" src="https://media.cntraveler.com/photos/5b97ea9959ff057868b4ea22/master/pass/The-Peninsula-Bangkok_2018_The-Peninsula-Bangkok_The-Pool-11.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 style="font-size:16px;margin-top:0px;padding-top:0px;" class="card-title">Bus</h5>
+                        <p style="font-size:12px;" class="card-text"><strong>IsAvailable:available</strong><br />Rating:4.6<br />Advantages:Pool,Wifi,Free Parking,Beach<br /><strong>Free Cancellation,30% off with family package</strong></br> <button class="btn mt-3 btn-outline-info">View Details</button></p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" style="width:100%;" src="https://badianhotel.com/wp-content/uploads/2020/08/the-spectator-charleston-south-carolina-lead-CHARLESTONHTLWB18-800x500.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 style="font-size:16px;margin-top:0px;padding-top:0px;" class="card-title">Train</h5>
+                        <p style="font-size:12px;" class="card-text"><strong>IsAvailable:available</strong><br />Rating:4.6<br />Advantages:Pool,Wifi,Free Parking,Beach<br /><strong>Free Cancellation,30% off with family package</strong></br> <button class="btn mt-3 btn-outline-info">View Details</button></p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="https://badianhotel.com/wp-content/uploads/2020/08/even-hotels-eugene-5405616297-4x3-1-800x600.jpeg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 style="font-size:16px;margin-top:0px;padding-top:0px;" class="card-title">Plane</h5>
+                        <p style="font-size:12px;" class="card-text"><strong>IsAvailable:available</strong><br />Rating:4.6<br />Advantages:Pool,Wifi,Free Parking,Beach<br /><strong>Free Cancellation,30% off with family package</strong></br> <button class="btn mt-3 btn-outline-info">View Details</button></p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+

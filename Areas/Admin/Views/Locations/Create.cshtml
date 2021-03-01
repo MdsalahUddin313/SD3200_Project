@@ -1,0 +1,63 @@
+﻿@model SDProject03.Models.LocationsModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="text-center">Create</h1>
+
+<h4 class="text-center">LocationsModel</h4>
+<hr />
+<div class="container  m-auto">
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="LocationName" class="control-label"></label>
+                    <input asp-for="LocationName" class="form-control" />
+                    <span asp-validation-for="LocationName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="LocationTitle" class="control-label"></label>
+                    <input asp-for="LocationTitle" class="form-control" />
+                    <span asp-validation-for="LocationTitle" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="LocationDescription" class="control-label"></label>
+                    <input asp-for="LocationDescription" class="form-control" />
+                    <span asp-validation-for="LocationDescription" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="LocationMap" class="control-label"></label>
+                    <input asp-for="LocationMap" class="form-control" />
+                    <span asp-validation-for="LocationMap" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="ImageFile" class="control-label"></label>
+                    <input asp-for="ImageFile" accept="image/*" />
+                    <span asp-validation-for="ImageFile" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="LocationRating" class="control-label"></label>
+                    <input asp-for="LocationRating" class="form-control" />
+                    <span asp-validation-for="LocationRating" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
