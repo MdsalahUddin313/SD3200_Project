@@ -20,5 +20,13 @@ namespace SDProject03.Data
         }
 
         public DbSet <LocationsModel> Location { get; set; }
+        public DbSet<TrainModel> Train { get; set; }
+        public DbSet<BusModel> BusData { get; set; }
+
+        public DbSet<HotelsModel> HotelsData { get; set; }
+        public DbSet<BlogPostsModel> BlogsPost { get; set; }
+
+
+
     }
 }

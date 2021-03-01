@@ -219,6 +219,156 @@ namespace SDProject03.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("SDProject03.Models.BlogPostsModel", b =>
+                {
+                    b.Property<int>("PostId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("AuthorsName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("BlogDescription")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("BlogTitle")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("BlogsRating")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("ImageName")
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<DateTime>("PostedTime")
+                        .HasColumnType("Posted time");
+
+                    b.Property<string>("PostsName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("PostId");
+
+                    b.ToTable("BlogsPost");
+                });
+
+            modelBuilder.Entity("SDProject03.Models.BusModel", b =>
+                {
+                    b.Property<int>("BusId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("ArrivalTime")
+                        .HasColumnType("datetime");
+
+                    b.Property<string>("BusArrivalLocation")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100000)");
+
+                    b.Property<string>("BusCompanyName")
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("BusDepartureLocation")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100000)");
+
+                    b.Property<string>("BusDescription")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("BusMap")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(10000)");
+
+                    b.Property<string>("BusName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("BusRating")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("BusSeatPrice")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("BusSeatType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("BusTitle")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<DateTime>("DepartureTime")
+                        .HasColumnType("datetime");
+
+                    b.Property<string>("ImageName")
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("BusId");
+
+                    b.ToTable("BusData");
+                });
+
+            modelBuilder.Entity("SDProject03.Models.HotelsModel", b =>
+                {
+                    b.Property<int>("HotelsId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CheckIn")
+                        .HasColumnType("CheckIn time");
+
+                    b.Property<DateTime>("CheckoutTime")
+                        .HasColumnType("Check Out Time");
+
+                    b.Property<string>("HotelsCompanyName")
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("HotelsDescription")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("HotelsMap")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(10000)");
+
+                    b.Property<string>("HotelsName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("HotelsRating")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("HotelsRoomtype")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("HotelsSeatPrice")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("HotelsTitle")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("ImageName")
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("HotelsId");
+
+                    b.ToTable("HotelsData");
+                });
+
             modelBuilder.Entity("SDProject03.Models.LocationsModel", b =>
                 {
                     b.Property<int>("LocationId")
@@ -235,7 +385,7 @@ namespace SDProject03.Data.Migrations
 
                     b.Property<string>("LocationMap")
                         .IsRequired()
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(10000)");
 
                     b.Property<string>("LocationName")
                         .IsRequired()
@@ -252,6 +402,66 @@ namespace SDProject03.Data.Migrations
                     b.HasKey("LocationId");
 
                     b.ToTable("Location");
+                });
+
+            modelBuilder.Entity("SDProject03.Models.TrainModel", b =>
+                {
+                    b.Property<int>("TrainId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("ArrivalTime")
+                        .HasColumnType("Arrival Time");
+
+                    b.Property<DateTime>("DepartureTime")
+                        .HasColumnType("Departure time");
+
+                    b.Property<string>("ImageName")
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("TrainArrivalLocation")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100000)");
+
+                    b.Property<string>("TrainCompanyName")
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("TrainDepartureLocation")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100000)");
+
+                    b.Property<string>("TrainDescription")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("TrainMap")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(10000)");
+
+                    b.Property<string>("TrainName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("TrainRating")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("TrainSeatPrice")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("TrainSeatType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("TrainTitle")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("TrainId");
+
+                    b.ToTable("Train");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

@@ -34,7 +34,21 @@ namespace SDProject03.Areas.Admin.Controllers
 
         [Route("/Locations")]
 
-        public IActionResult LocationsIndex()
+        public IActionResult LocationsViewsIndex()
+        {
+            return View();
+        }
+
+        [Route("/checkout")]
+        public IActionResult CheckOutIndex()
+        {
+            return View();
+        }
+
+
+        [Route("/favlist")]
+
+        public IActionResult FavouriteListIndex()
         {
             return View();
         }
@@ -48,5 +62,9 @@ namespace SDProject03.Areas.Admin.Controllers
         {
             return View();
         }
+
+
+
+
     }
 }

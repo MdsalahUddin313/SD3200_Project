@@ -465,4 +465,7 @@ C:\Users\Md salah Uddin\source\repos\SDProject03\obj\Debug\netcoreapp3.1\Razor\A
 C:\Users\Md salah Uddin\source\repos\SDProject03\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Locations\Edit.cshtml.g.cs
 C:\Users\Md salah Uddin\source\repos\SDProject03\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Locations\Index.cshtml.g.cs
 C:\Users\Md salah Uddin\source\repos\SDProject03\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Blog\DashboardIndex.cshtml.g.cs
-C:\Users\Md salah Uddin\source\repos\SDProject03\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Blog\LocationIndex.cshtml.g.cs
+C:\Users\Md salah Uddin\source\repos\SDProject03\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Blog\LocationsViewsIndex.cshtml.g.cs
+C:\Users\Md salah Uddin\source\repos\SDProject03\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Blog\CheckOutIndex.cshtml.g.cs
+C:\Users\Md salah Uddin\source\repos\SDProject03\bin\Debug\netcoreapp3.1\libman.json
+C:\Users\Md salah Uddin\source\repos\SDProject03\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Blog\FavouriteListIndex.cshtml.g.cs
