@@ -31,6 +31,8 @@ namespace SDProject03.Areas.Admin.Controllers
             return View(await _context.Location.ToListAsync());
         }
 
+        [Route("/location/details/{id}")]
+
         // GET: Admin/Locations/Details/5
         public async Task<IActionResult> Details(int? id)
         {

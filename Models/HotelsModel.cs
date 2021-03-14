@@ -44,7 +44,7 @@ namespace SDProject03.Models
 
 
         [Required]
-        [Column(TypeName = "nvarchar(10000)")]
+        [Column(TypeName = "nvarchar(900)")]
         [Display(Name = "Hotels Map")]
         public string HotelsMap { get; set; }
 

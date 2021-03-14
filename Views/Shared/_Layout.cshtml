@@ -1,6 +1,19 @@
 ﻿@using Microsoft.AspNetCore.Identity;
 @inject SignInManager<IdentityUser> signInManager;
 @inject UserManager<IdentityUser> UserManager
+@using System.Net.Http;
+@using SDProject03.Utility;
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor;
+@{ 
+    int count = 0;
+    List<HotelsModel> hotels = HttpContextAccessor.HttpContext.Session.Get<List<HotelsModel>>("hotels");
+    if (hotels == null)
+    {
+        hotels = new List<HotelsModel>();
+
+    }
+    count = hotels.Count();
+}
 
 
 <!DOCTYPE html>
@@ -43,8 +56,8 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="/favlist">
-                                FavList <span style="color:black"><i class="fa fa-user" aria-hidden="true"></i></span>
+                            <a class="nav-link text-dark" href="/cart">
+                                Cart (@count) <span style="color:black"><i class="fa fa-user" aria-hidden="true"></i></span>
                             </a>
                         </li>
 

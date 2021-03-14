@@ -25,6 +25,8 @@ namespace SDProject03.Data
 
         public DbSet<HotelsModel> HotelsData { get; set; }
         public DbSet<BlogPostsModel> BlogsPost { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderDetails> OrderDetails { get; set; }
 
 
 

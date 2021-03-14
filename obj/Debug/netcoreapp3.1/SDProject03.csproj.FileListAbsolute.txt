@@ -489,3 +489,9 @@ C:\Users\Md salah Uddin\source\repos\SDProject03\obj\Debug\netcoreapp3.1\Razor\A
 C:\Users\Md salah Uddin\source\repos\SDProject03\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\HotelsModels\Details.cshtml.g.cs
 C:\Users\Md salah Uddin\source\repos\SDProject03\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\HotelsModels\Edit.cshtml.g.cs
 C:\Users\Md salah Uddin\source\repos\SDProject03\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\HotelsModels\Index.cshtml.g.cs
+C:\Users\Md salah Uddin\source\repos\SDProject03\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\HotelsModels\HotelsCustomerDetails.cshtml.g.cs
+C:\Users\Md salah Uddin\source\repos\SDProject03\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Blog\HotelDetails.cshtml.g.cs
+C:\Users\Md salah Uddin\source\repos\SDProject03\bin\Debug\netcoreapp3.1\Stripe.net.dll
+C:\Users\Md salah Uddin\source\repos\SDProject03\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Blog\Cart.cshtml.g.cs
+C:\Users\Md salah Uddin\source\repos\SDProject03\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Order\Checkout.cshtml.g.cs
+C:\Users\Md salah Uddin\source\repos\SDProject03\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Blog\BlogDetails.cshtml.g.cs

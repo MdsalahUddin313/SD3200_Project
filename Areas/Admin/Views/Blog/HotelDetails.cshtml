@@ -1,0 +1,135 @@
+﻿@model SDProject03.Models.HotelsModel
+@using System.Net.Http;
+@using SDProject03.Utility;
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor;
+@{
+   // int count = 0;
+    List<HotelsModel> hotels = HttpContextAccessor.HttpContext.Session.Get<List<HotelsModel>>("hotels");
+
+    HotelsModel hotelsModel = null;
+    if (hotels != null)
+    {
+
+        hotelsModel = hotels.FirstOrDefault(c => c.HotelsId == Model.HotelsId);
+
+    }
+    // count = hotels.Count();
+}
+
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <h1>Single Hotels Details</h1>
+
+    <h3>Details Page</h3>
+    <div>
+        <h4>HotelsModel</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.HotelsName)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.HotelsName)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.HotelsCompanyName)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.HotelsCompanyName)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.HotelsTitle)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.HotelsTitle)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.HotelsDescription)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.HotelsDescription)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.HotelsMap)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.HotelsMap)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.HotelsRating)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.HotelsRating)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.HotelsRoomtype)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.HotelsRoomtype)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.HotelsSeatPrice)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.HotelsSeatPrice)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.CheckIn)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.CheckIn)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.CheckoutTime)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.CheckoutTime)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.ImageName)
+            </dt>
+            <dd class="col-sm-10">
+                <img src="@("~/Image/Hotels/"+Model.ImageName)" asp-append-version="true" width="250px" height="250px" />
+            </dd>
+        </dl>
+
+
+
+        <form asp-action="HotelDetails">
+            <input type="hidden" asp-for="HotelsId" />
+
+            @if (hotels != null)
+            {
+                <Button type="submit" value="Remove To Cart" class="btn btn-danger" asp-action="Remove" asp-route-id="@Model.HotelsId">Remove From Cart</Button>
+
+            }
+
+            <input type="submit" value="Add To Cart" class="btn btn-primary" />
+
+            ||<a asp-action="Index">Back to List</a>
+        </form>
+    </div>
+
+</div>
+
+@**
+
+
+
+        @if (hotels != null)
+        {
+            <Button type="submit" value="Remove To Cart" class="btn btn-danger" asp-action="Remove" asp-route-id="@Model.HotelsId" />
+
+        }
+
+    asp-action="HotelCartDetails" asp-controller="BlogController"
+            <input type="submit" value="Add To Cart" class="btn btn-primary" /> |
+            <input type="submit" value="Book Now :)" class="btn btn-danger" /> |
+
+
+*@

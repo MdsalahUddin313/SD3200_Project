@@ -1,0 +1,82 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@using System.Net.Http;
+@using SDProject03.Utility;
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor;
+@{
+    // int count = 0;
+    List<HotelsModel> hotels = HttpContextAccessor.HttpContext.Session.Get<List<HotelsModel>>("hotels");
+
+    // count = hotels.Count();
+}
+
+@model List<HotelsModel>
+@{
+    ViewData["title"] = "cart";
+}
+
+<div class="container">
+    <h1>Cart</h1>
+
+    <br />
+    <div class="row">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Hotel rating</th>
+                    <th></th>
+
+
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model)
+                {
+
+                    <tr>
+                        <td>
+                            <img src="~/Image/Hotels/@item.ImageName" width="200px" height="150px" />
+
+                        </td>
+                        <td>@item.HotelsName</td>
+                        <td>@item.HotelsSeatPrice</td>
+
+                        <td>@item.HotelsRating</td>
+                        <td>
+                            <a type="submit" value="Remove To Cart" class="btn btn-danger" asp-action="Remove"  asp-route-id="@item.HotelsId">Remove From Cart</a>
+
+
+                        </td>
+
+
+
+
+                    </tr>
+
+                }
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-6 col-lg-6 col-xl-6 col-sm-6">
+            <button class="btn btn-success">Back to Home</button>
+        </div>
+
+
+        <div class="col-md-6 col-lg-6 col-xl-6 col-sm-6 text-right">
+            <h1>Grand Total:@Model.Sum(c => int.Parse(c.HotelsSeatPrice))</h1>
+            <button class="btn btn-info">Proceed To Check out</button>
+        </div>
+
+    </div>
+
+
+</div>

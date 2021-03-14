@@ -3,6 +3,8 @@
 *@
 @{
 }
+@model IEnumerable<SDProject03.Models.BlogPostsModel>
+
 
 @{
     ViewData["Title"] = "Blog Page";
@@ -40,7 +42,6 @@
     </ul>
 
 </nav>
-
 
 
 
@@ -91,6 +92,9 @@
     Top rated Blogs Part
 
     =========================-->
+<a class="container ml-lg-5 text-right" style="margin-top:25px;" href="https://localhost:44354/BlogPostsModels/Create">+Create new</a>
+
+
 <div class="text-center mt-5 my-4">
     <h1> Top Blogs </h1>
     <p>____________________________________</p>
@@ -100,65 +104,23 @@
     <div class="row mt-4">
         <div class="col-xl-6">
             <p class="text-sm-left">Recent News</p>
+            @foreach (var item in Model)
+            {
 
-            <card class="card-body">
-                <div class="col-md-6 float-left">
-                    <img src="https://wallpapershome.com/images/wallpapers/autumn-forest-1280x720-4k-hd-wallpaper-leaves-trees-lake-rocks-beach-578.jpg" class="w-100 h-100 " alt="Chicago">
-                </div>
-                <div class="col-md-4 float-left">
-                    <h1 style="font-size:16px;"><strong>Header Title</strong></h1>
-                    <p>Summary Description</p>
-                    <p class="text-muted">date and time<br />ratings:4.5 likes</p>
-                </div>
 
-            </card>
-            <card class="card-body">
-                <div class="col-md-6 float-left">
-                    <img src="https://wallpapershome.com/images/wallpapers/autumn-forest-1280x720-4k-hd-wallpaper-leaves-trees-lake-rocks-beach-578.jpg" class="w-100 h-100 " alt="Chicago">
-                </div>
-                <div class="col-md-4 float-left">
-                    <h1 style="font-size:16px;"><strong>Header Title</strong></h1>
-                    <p>Summary Description</p>
-                    <p class="text-muted">date and time<br />ratings:4.5 likes</p>
-                </div>
+                <card class="card-body">
+                    <div class="col-md-6 float-left">
+                        <img src="@item.ImageName" class="w-100" style="height:100px;" alt="Chicago">
+                    </div>
+                    <div class="col-md-4 float-left">
+                        <h1 style="font-size:16px;"><strong><a asp-action="BlogDetails" asp-route-id="@item.PostId">@item.BlogTitle</a></strong></h1>
+                        <p>@item.PostsName</p>
+                        <p class="text-muted">Posted At:@item.PostedTime<br />@item.BlogsRating</p>
+                    </div>
 
-            </card>
+                </card>
+            }
 
-            <card class="card-body">
-                <div class="col-md-6 float-left">
-                    <img src="https://wallpapershome.com/images/wallpapers/autumn-forest-1280x720-4k-hd-wallpaper-leaves-trees-lake-rocks-beach-578.jpg" class="w-100 h-100 " alt="Chicago">
-                </div>
-                <div class="col-md-4 float-left">
-                    <h1 style="font-size:16px;"><strong>Header Title</strong></h1>
-                    <p>Summary Description</p>
-                    <p class="text-muted">date and time<br />ratings:4.5 likes</p>
-                </div>
-
-            </card>
-
-            <card class="card-body">
-                <div class="col-md-6 float-left">
-                    <img src="https://wallpapershome.com/images/wallpapers/autumn-forest-1280x720-4k-hd-wallpaper-leaves-trees-lake-rocks-beach-578.jpg" class="w-100 h-100 " alt="Chicago">
-                </div>
-                <div class="col-md-4 float-left">
-                    <h1 style="font-size:16px;"><strong>Header Title</strong></h1>
-                    <p>Summary Description</p>
-                    <p class="text-muted">date and time<br />ratings:4.5 likes</p>
-                </div>
-
-            </card>
-
-            <card class="card-body">
-                <div class="col-md-6 float-left">
-                    <img src="https://wallpapershome.com/images/wallpapers/autumn-forest-1280x720-4k-hd-wallpaper-leaves-trees-lake-rocks-beach-578.jpg" class="w-100 h-100 " alt="Chicago">
-                </div>
-                <div class="col-md-4 float-left">
-                    <h1 style="font-size:16px;"><strong>Header Title</strong></h1>
-                    <p>Summary Description</p>
-                    <p class="text-muted">date and time<br />ratings:4.5 likes</p>
-                </div>
-
-            </card>
 
         </div>
         <div class="col-md-6 w-50 h-100">
@@ -167,7 +129,6 @@
 
     </div>
 </section>
-
 
 
 <!--========================
