@@ -35,7 +35,7 @@ namespace SDProject03.Models
 
 
         [Required]
-        [Column(TypeName = "nvarchar(10000)")]
+        [Column(TypeName = "text")]
         [Display(Name = "Location Map")]
         public string LocationMap { get; set; }
 

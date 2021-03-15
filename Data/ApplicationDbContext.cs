@@ -27,6 +27,8 @@ namespace SDProject03.Data
         public DbSet<BlogPostsModel> BlogsPost { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderDetails> OrderDetails { get; set; }
+        public DbSet<CheckOut> CheckOut { get; set; }
+
 
 
 

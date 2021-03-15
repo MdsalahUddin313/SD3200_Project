@@ -3,6 +3,7 @@
 *@
 @{
 }
+@model IEnumerable<SDProject03.Models.LocationsModel>
 
 <!doctype html>
 <html lang="en">
@@ -48,9 +49,9 @@
 
                 <li class="nav-item">
 
-                    <form class="form-inline mt-2 mt-md-0">
-                        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    <form method="post" class="form-inline mt-2 mt-md-0">
+                        <input class="form-control mr-sm-2" type="text" name="cityName" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0"  type="submit">Search</button>
                     </form>
                 </li>
             </ul>
@@ -112,6 +113,7 @@
             </a>
         </div>
 
+     
 
         <!-- Marketing messaging and featurettes
         ================================================== -->
@@ -122,65 +124,18 @@
 
             <!-- Three columns of text below the carousel -->
             <div class="row container">
+                @foreach (var items in Model)
+                {
 
                 <div class="col-md-3">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Dhaka_14th_March_%2832624769393%29.jpg" class="w-100 img-fluid" style="height:180px" alt="dhaka" />
+                    <img src="~/Image/@items.ImageName" class="w-100 img-fluid" style="height:180px" alt="dhaka" />
 
-                    <div class="w-100"><p style="font-size:14px;" class="text-muted flex-left"> <strong>Dhaka.</strong><br />12,500 views</p></div>
+                    <div class="w-100"><a asp-action="LocationsDetails" asp-route-id="@items.LocationId" style="font-size:14px;" class="text-muted flex-left"> <strong>@items.LocationName</strong><br />12,500 views</a></div>
                 </div>
 
+                }
 
-
-                <div class="col-md-3">
-                    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/1e/4a/33/pangthumai-waterfall.jpg?w=1000&h=600&s=1" class="w-100 img-fluid" style="height:180px" alt="dhaka" />
-
-                    <div class="w-100"><p style="font-size:14px;" class="text-muted flex-left"> <strong>Sylhet.</strong><br />12,00 views</p></div>
-                </div>
-
-
-
-                <div class="col-md-3">
-                    <img src="https://i.pinimg.com/originals/3a/eb/8c/3aeb8cc54ebedb12efc33457bbc86960.jpg" class="w-100 img-fluid" style="height:180px" alt="dhaka" />
-
-                    <div class="w-100"><p style="font-size:14px;" class="text-muted flex-left"> <strong>Cox's Bazar.</strong><br />12,500 views</p></div>
-                </div>
-
-
-
-                <div class="col-md-3">
-                    <img src="https://i.ytimg.com/vi/MwiszZyJ9uI/maxresdefault.jpg" class="w-100 img-fluid" style="height:180px" alt="dhaka" />
-
-                    <div class="w-100"><p style="font-size:14px;" class="text-muted flex-left"> <strong>Chittagong.</strong><br />12,500 views</p></div>
-                </div>
-
-
-
-                <div class="col-md-3">
-                    <img src="https://i.pinimg.com/originals/e9/0f/c0/e90fc0db91040289fb7e5189509ff119.jpg" class="w-100 img-fluid" style="height:180px" alt="dhaka" />
-
-                    <div class="w-100"><p style="font-size:14px;" class="text-muted flex-left"> <strong>Khulna.</strong><br />12,500 views</p></div>
-                </div>
-
-
-                <div class="col-md-3">
-                    <img src="https://1.bp.blogspot.com/-hjE3M_7RZ6o/XcByB-FIRLI/AAAAAAAABzk/tSMOeWoHnvcrkFUgA48h6ytsKebPwwbpwCKgBGAsYHg/s1600/rajshahi.jpg" class="w-100 img-fluid" style="height:180px" alt="dhaka" />
-
-                    <div class="w-100"><p style="font-size:14px;" class="text-muted flex-left"> <strong>Rahsjahi.</strong><br />12,500 views</p></div>
-                </div>
-
-                <div class="col-md-3">
-                    <img src="https://i.pinimg.com/originals/1a/e1/99/1ae199f3a564f8fc1bffdf8f08679ac7.jpg" class="w-100 img-fluid" style="height:180px" alt="dhaka" />
-
-                    <div class="w-100"><p style="font-size:14px;" class="text-muted flex-left"> <strong>Rangamati.</strong><br />12,500 views</p></div>
-                </div>
-
-
-                <div class="col-md-3">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/37/Kuakata_beach.jpg" class="w-100 img-fluid" style="height:180px" alt="dhaka" />
-
-                    <div class="w-100"><p style="font-size:14px;" class="text-muted flex-left"> <strong>Kuakata.</strong><br />12,500 views</p></div>
-                </div>
-
+            
 
             </div><!-- /.row -->
             <!-- START THE FEATURETTES -->
@@ -232,7 +187,7 @@
         <!-- FOOTER -->
         <footer class="container">
             <p class="float-right"><a href="#">Back to top</a></p>
-            
+
         </footer>
     </main>
 

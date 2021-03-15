@@ -15,7 +15,7 @@ namespace SDProject03.Data.Migrations
                     LocationName = table.Column<string>(type: "nvarchar(100)", nullable: false),
                     LocationTitle = table.Column<string>(type: "nvarchar(100)", nullable: false),
                     LocationDescription = table.Column<string>(type: "text", nullable: false),
-                    LocationMap = table.Column<string>(type: "nvarchar(10000)", nullable: false),
+                    LocationMap = table.Column<string>(type: "text", nullable: false),
                     LocationRating = table.Column<string>(type: "nvarchar(100)", nullable: false)
                 },
                 constraints: table =>

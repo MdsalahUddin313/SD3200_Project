@@ -1,0 +1,80 @@
+﻿@model SDProject03.Models.CheckOut
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using System.Net.Http;
+@using SDProject03.Utility;
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor;
+@{
+    // int count = 0;
+    List<HotelsModel> hotels = HttpContextAccessor.HttpContext.Session.Get<List<HotelsModel>>("hotels");
+
+    // count = hotels.Count();
+}
+
+@*model List<HotelsModel>
+@{
+//    ViewData["title"] = "cart";
+}
+    *@
+<div class="container">
+    <h4>CheckOut</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CardNo" class="control-label"></label>
+                    <input asp-for="CardNo" class="form-control" />
+                    <span asp-validation-for="CardNo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CardPin" class="control-label"></label>
+                    <input asp-for="CardPin" class="form-control" />
+                    <span asp-validation-for="CardPin" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ExpireDate" class="control-label"></label>
+                    <input asp-for="ExpireDate" class="form-control" />
+                    <span asp-validation-for="ExpireDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PaymentAmount" class="control-label"></label>
+                    <input asp-for="PaymentAmount" class="form-control" value="@hotels.Sum(c => int.Parse(c.HotelsSeatPrice))"/>
+                    <span asp-validation-for="PaymentAmount" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+                <h1>Grand Total:@hotels.Sum(c => int.Parse(c.HotelsSeatPrice))</h1>
+
+            </form>
+        </div>
+        <div class="col-md-6">
+
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+
+
+</div>

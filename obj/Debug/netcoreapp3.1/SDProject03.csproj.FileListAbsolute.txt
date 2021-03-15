@@ -495,3 +495,9 @@ C:\Users\Md salah Uddin\source\repos\SDProject03\bin\Debug\netcoreapp3.1\Stripe.
 C:\Users\Md salah Uddin\source\repos\SDProject03\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Blog\Cart.cshtml.g.cs
 C:\Users\Md salah Uddin\source\repos\SDProject03\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Order\Checkout.cshtml.g.cs
 C:\Users\Md salah Uddin\source\repos\SDProject03\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Blog\BlogDetails.cshtml.g.cs
+C:\Users\Md salah Uddin\source\repos\SDProject03\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Blog\LocationsDetails.cshtml.g.cs
+C:\Users\Md salah Uddin\source\repos\SDProject03\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\CheckOuts\Create.cshtml.g.cs
+C:\Users\Md salah Uddin\source\repos\SDProject03\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\CheckOuts\Delete.cshtml.g.cs
+C:\Users\Md salah Uddin\source\repos\SDProject03\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\CheckOuts\Details.cshtml.g.cs
+C:\Users\Md salah Uddin\source\repos\SDProject03\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\CheckOuts\Edit.cshtml.g.cs
+C:\Users\Md salah Uddin\source\repos\SDProject03\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\CheckOuts\Index.cshtml.g.cs

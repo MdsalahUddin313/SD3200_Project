@@ -26,9 +26,16 @@ namespace SDProject03.Areas.Admin.Controllers
 
         [Route("/location/index")]
         // GET: Admin/Locations
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(String? cityName )
+
         {
-            return View(await _context.Location.ToListAsync());
+            var loc = _context.Location.Where(c => c.LocationName == cityName).ToList();
+            if (cityName == null)
+            {
+                loc = _context.Location.ToList();
+
+            }
+            return View(loc);
         }
 
         [Route("/location/details/{id}")]

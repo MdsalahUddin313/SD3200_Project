@@ -317,6 +317,41 @@ namespace SDProject03.Data.Migrations
                     b.ToTable("BusData");
                 });
 
+            modelBuilder.Entity("SDProject03.Models.CheckOut", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("CardNo")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(12)");
+
+                    b.Property<string>("CardPin")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(3)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<DateTime>("ExpireDate")
+                        .HasColumnType("datetime");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("PaymentAmount")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CheckOut");
+                });
+
             modelBuilder.Entity("SDProject03.Models.HotelsModel", b =>
                 {
                     b.Property<int>("HotelsId")
@@ -385,7 +420,7 @@ namespace SDProject03.Data.Migrations
 
                     b.Property<string>("LocationMap")
                         .IsRequired()
-                        .HasColumnType("nvarchar(10000)");
+                        .HasColumnType("text");
 
                     b.Property<string>("LocationName")
                         .IsRequired()
@@ -445,7 +480,7 @@ namespace SDProject03.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("HotelsId")
+                    b.Property<int>("HotelsId")
                         .HasColumnType("int");
 
                     b.Property<int>("OrderId")
@@ -575,7 +610,9 @@ namespace SDProject03.Data.Migrations
                 {
                     b.HasOne("SDProject03.Models.HotelsModel", "Hotel")
                         .WithMany()
-                        .HasForeignKey("HotelsId");
+                        .HasForeignKey("HotelsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("SDProject03.Models.Order", "Order")
                         .WithMany("OrderDetails")

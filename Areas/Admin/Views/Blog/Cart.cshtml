@@ -73,7 +73,7 @@
 
         <div class="col-md-6 col-lg-6 col-xl-6 col-sm-6 text-right">
             <h1>Grand Total:@Model.Sum(c => int.Parse(c.HotelsSeatPrice))</h1>
-            <button class="btn btn-info">Proceed To Check out</button>
+            <a class="btn btn-info" href="https://localhost:44354/checkouts/create">Proceed To Check out</a>
         </div>
 
     </div>

@@ -21,6 +21,7 @@
         <div class="col-md-3">
 
             <h1 class=" text-center m-auto" style="font-size:16px;">Search filters</h1><br /><br />
+            <form method="post">
             <label for="fdate">Check In</label>
             <input class="form-control" type="date" id="fdate" name="fdate" /><br />
             <label for="tdate">Check Out</label>
@@ -28,8 +29,11 @@
 
             <h1 class=" text-center m-auto" style="font-size:16px;">Search by Locations</h1><br />
             <label for="location">Choose your Hotel by using Location.</label>
-            <select class="form-control" id="location"><option>Dhaka</option><option>Sylhet</option><option>Rajshahi</option><option>Chittagong</option></select>
 
+            <select class="form-control" name="Hotelsmap" id="location"><option>Uttara</option><option>Mirpur</option><option>Gulistan Road</option><option>Gulshan</option></select>
+            
+        <input class="btn btn-success" type="submit" value="Search"/>
+            </form>
         </div>
 
 
@@ -73,30 +77,32 @@
         </div>
 
     </div>
-    <div class=""></div>
-    @foreach (var Hotel in Model)
-    {
-<div class="row container my-auto h-100 mt-5">
-    <div class="col-md-12 col-sm-12" style="border:1px solid gray;margin:15px;padding:15px;">
-        <div class="card">
-            <img class="card-img-top img-fluid" style="width:100% ;height:350px" src="~/Image/Hotels/@Hotel.ImageName" alt="Card image cap">
-            <div class="card-body">
-                <h5 style="font-size:16px;margin-top:0px;padding-top:0px;" class="card-title">@Hotel.HotelsName</h5>
-                <p style="font-size:12px;" class="card-text">@Hotel.HotelsRating</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                <a asp-action="HotelDetails" asp-route-id="@Hotel.HotelsId" type="button" class="btn mt-3 btn-outline-info"> View Details</a>
+    <div class="mt-5">
+        @foreach (var Hotel in Model)
+        {
+            <div class="row container my-auto h-100 mt-5">
+                <div class="col-md-7 col-sm-4 m-auto" style="border:1px solid gray;margin:15px;padding:15px;">
+                    <div class="card">
+                        <img class="card-img-top img-fluid" style="width:100% ;height:350px" src="~/Image/Hotels/@Hotel.ImageName" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 style="font-size:16px;margin-top:0px;padding-top:0px;" class="card-title">@Hotel.HotelsName</h5>
+                            <p style="font-size:12px;" class="card-text">@Hotel.HotelsRating</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            <a asp-action="HotelDetails" asp-route-id="@Hotel.HotelsId" type="button" class="btn mt-3 btn-outline-info"> View Details</a>
 
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+
+
+
+
+
+
+
+        }
     </div>
-   </div>
 
-     
-               
-
-           
-
-
-            }
 
 </div>

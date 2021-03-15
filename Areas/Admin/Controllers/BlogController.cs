@@ -30,7 +30,21 @@ namespace SDProject03.Areas.Admin.Controllers
             return View(_db.HotelsData.ToList());
         }
 
-       [Route("/details/{id}")]
+        [Route("/hotels")]
+
+        [HttpPost]
+        public IActionResult HotelsIndex(String? Hotelsmap )
+        {
+            var products = _db.HotelsData.Where(c => c.HotelsMap == Hotelsmap).ToList();
+           if(Hotelsmap == null)
+            {
+                products = _db.HotelsData.ToList();
+
+            }
+            return View(products);
+        }
+
+        [Route("/details/{id}")]
         // GET: Admin/HotelsModels/Delete/5
         public async Task<IActionResult> HotelDetails(int? id)
         {
@@ -202,12 +216,57 @@ namespace SDProject03.Areas.Admin.Controllers
             return View();
         }
 
+
+
         [Route("/Locations")]
 
         public IActionResult LocationsViewsIndex()
         {
-            return View();
+            return View(_db.Location.ToList());
         }
+
+        [Route("/Locations")]
+        [HttpPost]
+        public IActionResult LocationsViewsIndex(String? cityName)
+        {
+            var loc = _db.Location.Where(c => c.LocationName == cityName).ToList();
+            if (cityName == null)
+            {
+                loc = _db.Location.ToList();
+
+            }
+            return View(loc);
+        }
+
+
+
+
+
+
+
+
+
+
+        [Route("/Locations/details/{id}")]
+        // GET: Admin/HotelsModels/Delete/5
+        public async Task<IActionResult> LocationsDetails(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var locationModel = await _db.Location
+                .FirstOrDefaultAsync(m => m.LocationId == id);
+            if (locationModel == null)
+            {
+                return NotFound();
+            }
+
+            return View(locationModel);
+        }
+
+
 
         [Route("/checkout")]
         public IActionResult CheckOutIndex()
