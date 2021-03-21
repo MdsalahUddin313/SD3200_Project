@@ -6,6 +6,45 @@
 }
 
 
+@using System.Net.Http;
+@using SDProject03.Utility;
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor;
+@{
+    // int count = 0;
+    List<LocationsModel> locations = HttpContextAccessor.HttpContext.Session.Get<List<LocationsModel>>("locations");
+
+    // count = hotels.Count();
+}
+
+@model List<LocationsModel>
+
+<div class="container">
+    
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -24,52 +63,51 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="jumbotron mt-3">
-            <h5>Title List one </h5>
-            <img src="https://cf.bstatic.com/images/hotel/max1024x768/681/68184730.jpg" alt="sss" style="wdth:100%;height:180px;" />
-            <p class="lead">This example is a quick exercise to illustrate how the bottom navbar works.</p>
-            <a class="btn btn-lg btn-primary" href="../../components/navbar/" role="button">Confirm Book</a>
+    
+    @foreach (var item in Model)
+    {
+
+        <div class="container">
+            <div class="jumbotron mt-3">
+
+                <h5>@item.LocationName</h5>
+                <img src="~/Image/@item.ImageName" alt="sss" style="wdth:100%;height:180px;" />
+                <p class="lead">@item.LocationTitle</p>
+                <p><strong>Rating:</strong>@item.LocationRating</p>                
+                <a class="btn btn-lg btn-primary" href="../../components/navbar/" role="button">Explore Now</a>
+                <a class="btn btn-lg btn-outline-success" href="../../components/navbar/" role="button">Visited</a>
+
+            </div>
         </div>
-    </div>
-
-    <div class="container">
-        <div class="jumbotron mt-3">
-            <h5>Title List Two </h5>
-            <img src="https://cf.bstatic.com/images/hotel/max1024x768/681/68184730.jpg" alt="sss" style="wdth:100%;height:180px;" />
-            <p class="lead">This example is a quick exercise to illustrate how the bottom navbar works.</p>
-            <a class="btn btn-lg btn-primary" href="../../components/navbar/" role="button">Confirm Book</a>
-        </div>
-    </div>
 
 
+    }
 
+        <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Bottom navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">WhishList <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/checkout">Cart</a>
+                    </li>
 
-    <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Bottom navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">WhishList <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/checkout">Cart</a>
-                </li>
-                
-            </ul>
-        </div>
-    </nav>
+                </ul>
+            </div>
+        </nav>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-    <script src="../../assets/js/vendor/popper.min.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-</body>
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+        <script src="../../assets/js/vendor/popper.min.js"></script>
+        <script src="../../dist/js/bootstrap.min.js"></script>
+    </body>
 </html>
 

@@ -1,14 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SDProject03.Data;
 using SDProject03.Models;
 using SDProject03.Utility;
+using System.Net.Mail;
+using System.Net;
+
 
 namespace SDProject03.Areas.Admin.Controllers
 {
@@ -53,18 +54,32 @@ namespace SDProject03.Areas.Admin.Controllers
         // GET: Admin/CheckOuts/Create
         public IActionResult Create()
         {
+            
+            
             return View();
         }
 
+       // [HttpPost]
+        //[Route("/checkouts/create")]
+//        [ActionName("Create")]
 
-            //if(hotels == null)
-           // {
-            //    hotels = new List<HotelsModel>();
+        // GET: Admin/CheckOuts/Create
+    //    public IActionResult SendEmail()
+  //      {
 
-           // }
-          //  return View(hotels);
 
-    [Route("/checkouts/create")]
+         //   return View();
+      ///  }
+
+
+        //if(hotels == null)
+        // {
+        //    hotels = new List<HotelsModel>();
+
+        // }
+        //  return View(hotels);
+
+        [Route("/checkouts/create")]
         // POST: Admin/CheckOuts/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -77,12 +92,71 @@ namespace SDProject03.Areas.Admin.Controllers
 
         if (ModelState.IsValid)
             {
+                string emailadd = checkOut.Email;
+                string grandTotal = checkOut.PaymentAmount;
+                SendVerificationLinkEmail(emailadd,grandTotal);
                 _context.Add(checkOut);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             return View(checkOut);
         }
+
+
+
+
+
+        [NonAction]
+        public void SendVerificationLinkEmail(string emailID ,string totalValue)
+        {
+            var verifyUrl = "/User/VerifyAccount/" ;
+           // var link=Request.
+           // var link = Request.Url.AbsoluteUri.Replace(Request.Url.PathAndQuery, verifyUrl);
+           string link= "https://localhost:44354/verfied/Checkout";
+            string imageLink = "http://www.tools4business.net/wp-content/uploads/2020/10/Payment-success.png";
+            string alt = "successfully purchased";
+
+            var fromEmail = new MailAddress("youremail@mail.com", "Tour App");
+            var toEmail = new MailAddress(emailID);
+            var fromEmailPassword = "###### Add Your Password #####";
+            string subject = "Your Booking is successfully created!";
+
+            string body = "<br/><br/>Congratulations We are excited to tell you that your Payment is" +
+                " successfully Booked. Thank You for Using Our System" +
+                " <br/><br/><h1>We hope for your best wishes.<h1/>"+"<br></br>"+
+                "You"+"  "+emailID+"<br><br/>"+
+                "Purchased <strong>Total </strong>"+ totalValue+"Taka<br><br/>"+
+                "Verified your Order from below Link"+"<br></br><br></br>"+
+                "<a href="+link+" > "+link+" </a>" ;
+
+            var smtp = new SmtpClient
+            {
+                Host = "smtp.gmail.com",
+                Port = 587,
+                EnableSsl = true,
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                UseDefaultCredentials = false,
+                Credentials = new NetworkCredential(fromEmail.Address, fromEmailPassword)
+            };
+
+            using (var message = new MailMessage(fromEmail, toEmail)
+            {
+                Subject = subject,
+                Body = body,
+                IsBodyHtml = true
+            })
+                smtp.Send(message);
+        }
+
+
+        [Route("/verfied/Checkout")]
+        public IActionResult verifiedCheckout()
+        {
+            return View();
+        }
+
+
+
 
         // GET: Admin/CheckOuts/Edit/5
         public async Task<IActionResult> Edit(int? id)

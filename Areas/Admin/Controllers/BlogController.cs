@@ -194,7 +194,10 @@ namespace SDProject03.Areas.Admin.Controllers
             return View(hotels);
         }
 
-        
+
+
+   
+
 
 
 
@@ -214,6 +217,52 @@ namespace SDProject03.Areas.Admin.Controllers
         public IActionResult TransportIndex()
         {
             return View();
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        [Route("/favlist")]
+
+        public IActionResult FavouriteListIndex()
+        {
+            List<LocationsModel> hotels = HttpContext.Session.Get<List<LocationsModel>>("locations");
+            if (hotels == null)
+            {
+                hotels = new List<LocationsModel>();
+
+            }
+            return View(hotels);
         }
 
 
@@ -238,15 +287,6 @@ namespace SDProject03.Areas.Admin.Controllers
             return View(loc);
         }
 
-
-
-
-
-
-
-
-
-
         [Route("/Locations/details/{id}")]
         // GET: Admin/HotelsModels/Delete/5
         public async Task<IActionResult> LocationsDetails(int? id)
@@ -267,6 +307,52 @@ namespace SDProject03.Areas.Admin.Controllers
         }
 
 
+        [Route("/Locations/details/{id}")]
+        // GET: Admin/HotelsModels/Delete/5
+        [HttpPost]
+        [ActionName("LocationsDetails")]
+        public async Task<IActionResult> LocationCartDetails(int? id)
+        {
+            List<LocationsModel> lc = new List<LocationsModel>();
+
+
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var locationModel = await _db.Location
+                .FirstOrDefaultAsync(m => m.LocationId == id);
+            if (locationModel == null)
+            {
+                return NotFound();
+            }
+            lc = HttpContext.Session.Get<List<LocationsModel>>("locations");
+            if (lc == null)
+            {
+                lc = new List<LocationsModel>();
+            }
+            lc.Add(locationModel);
+            HttpContext.Session.Set("locations", lc);
+
+            return View(locationModel);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         [Route("/checkout")]
         public IActionResult CheckOutIndex()
@@ -275,13 +361,7 @@ namespace SDProject03.Areas.Admin.Controllers
         }
 
 
-        [Route("/favlist")]
-
-        public IActionResult FavouriteListIndex()
-        {
-            return View();
-        }
-
+       
 
         [Authorize]
 

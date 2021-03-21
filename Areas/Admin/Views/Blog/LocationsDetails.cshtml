@@ -29,10 +29,16 @@
     </dd>
 
     <dd class="col-sm-12 mt-5">
-       
+
         <iframe src="@Html.DisplayFor(model => model.LocationMap)" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </dd>
 
+
+    <form asp-action="LocationsDetails">
+        <input type="hidden" asp-for="LocationId" />
+        <input type="submit" value="Add To Whishlist" class="btn btn-outline-danger"/>
+        ||<a asp-action="Index">Back to List</a>
+    </form>
 
 </div>
 

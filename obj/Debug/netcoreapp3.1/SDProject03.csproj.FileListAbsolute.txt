@@ -501,3 +501,4 @@ C:\Users\Md salah Uddin\source\repos\SDProject03\obj\Debug\netcoreapp3.1\Razor\A
 C:\Users\Md salah Uddin\source\repos\SDProject03\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\CheckOuts\Details.cshtml.g.cs
 C:\Users\Md salah Uddin\source\repos\SDProject03\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\CheckOuts\Edit.cshtml.g.cs
 C:\Users\Md salah Uddin\source\repos\SDProject03\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\CheckOuts\Index.cshtml.g.cs
+C:\Users\Md salah Uddin\source\repos\SDProject03\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\CheckOuts\verifiedCheckout.cshtml.g.cs
